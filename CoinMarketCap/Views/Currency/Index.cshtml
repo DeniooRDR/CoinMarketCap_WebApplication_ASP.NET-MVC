@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Cripto Currency</title>
+</head>
+<body>
+    <div>
+        <table>
+            <tr>
+                <td><p>Название</p></td>
+                <td><p>Символ</p></td>            
+                <td><p>Ранг</p></td>
+                <td><p>Текущая цена USD</p></td>
+                <td><p>Изменение цены за последний час</p></td>
+                <td><p>Изменение цены за последние 24 часа</p></td>
+                <td><p>Капитализация USD</p></td>
+                <td><p>Время обновления данных</p></td>
+            </tr>
+            @foreach (var j in ViewBag.curr)
+            {
+                <tr>
+                    <td><p>@j.name</p></td>
+                    <td><p>@j.symbol</p></td>
+                    <td><p>@j.rank</p></td>
+                    <td><p>@j.price_usd</p></td>
+                    <td><p>@j.percent_change_1h</p></td>
+                    <td><p>@j.percent_change_24h</p></td>
+                    <td><p>@j.market_cap_usd</p></td>
+                    <td><p>@j.last_updated</p></td>
+                </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>
+
