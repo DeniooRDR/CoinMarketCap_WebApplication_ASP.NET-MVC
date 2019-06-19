@@ -12,7 +12,6 @@ namespace CoinMarketCap.Controllers
 {
     public class CurrencyController : Controller
     {
-        
         public ActionResult Index()
         {
             HttpWebRequest Ticker = (HttpWebRequest)WebRequest.Create(string.Format("https://api.coinmarketcap.com/v1/ticker/"));
@@ -22,7 +21,7 @@ namespace CoinMarketCap.Controllers
             HttpWebResponse webResponse = (HttpWebResponse)Ticker.GetResponse();
 
             string currencyJson;
-            using (Stream stream = webResponse.GetResponseStream())   //modified from your code since the using statement disposes the stream automatically when done
+            using (Stream stream = webResponse.GetResponseStream())   
             {
                 StreamReader reader = new StreamReader(stream, System.Text.Encoding.UTF8);
                 currencyJson = reader.ReadToEnd();

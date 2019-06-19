@@ -3,26 +3,61 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Котировки криптовалют</h2>
 
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Cripto Currency</title>
+    <style>
+        table {
+            width: 100%; /* Ширина таблицы */
+            border-collapse: collapse; /* Убираем двойные линии между ячейками */
+        }
+
+        td, th {
+            padding: 4px; /* Поля в ячейках */
+            border: 1px solid #999; /* Граница между ячейками */
+        }
+
+        thead {
+            background: #666; /* Цвет фона строки заголовка */
+            color: #fff; /* Цвет текста */
+        }
+
+        tfoot {
+            background: #666; /* Цвет фона строки заголовка */
+            color: #fff; /* Цвет текста */
+        }
+    </style>
 </head>
 <body>
     <div>
         <table>
-            <tr>
-                <td><p>Название</p></td>
-                <td><p>Символ</p></td>            
-                <td><p>Ранг</p></td>
-                <td><p>Текущая цена USD</p></td>
-                <td><p>Изменение цены за последний час</p></td>
-                <td><p>Изменение цены за последние 24 часа</p></td>
-                <td><p>Капитализация USD</p></td>
-                <td><p>Время обновления данных</p></td>
-            </tr>
+            <thead>
+                <tr>
+                    <th><p>Название</p></th>
+                    <th><p>Символ</p></th>
+                    <th><p>Ранг</p></th>
+                    <th><p>Текущая цена USD</p></th>
+                    <th><p>Изменение цены за последний час</p></th>
+                    <th><p>Изменение цены за последние 24 часа</p></th>
+                    <th><p>Капитализация USD</p></th>
+                    <th><p>Время обновления данных</p></th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <th><p>Название</p></th>
+                    <th><p>Символ</p></th>
+                    <th><p>Ранг</p></th>
+                    <th><p>Текущая цена USD</p></th>
+                    <th><p>Изменение цены за последний час</p></th>
+                    <th><p>Изменение цены за последние 24 часа</p></th>
+                    <th><p>Капитализация USD</p></th>
+                    <th><p>Время обновления данных</p></th>
+                </tr>
+            </tfoot>
             @foreach (var j in ViewBag.curr)
             {
                 <tr>
@@ -37,7 +72,7 @@
                 </tr>
             }
         </table>
-    </div>
-</body>
+        </div>
+    </body>
 </html>
 
